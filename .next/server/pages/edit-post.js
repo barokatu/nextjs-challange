@@ -1,82 +1,157 @@
 "use strict";
-/*
- * ATTENTION: An "eval-source-map" devtool has been used.
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 (() => {
 var exports = {};
-exports.id = "pages/edit-post";
-exports.ids = ["pages/edit-post"];
+exports.id = 774;
+exports.ids = [774];
 exports.modules = {
 
-/***/ "./pages/api/posts.js":
-/*!****************************!*\
-  !*** ./pages/api/posts.js ***!
-  \****************************/
+/***/ 3258:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createPost\": () => (/* binding */ createPost),\n/* harmony export */   \"deletePost\": () => (/* binding */ deletePost),\n/* harmony export */   \"getAllPosts\": () => (/* binding */ getAllPosts),\n/* harmony export */   \"getPost\": () => (/* binding */ getPost),\n/* harmony export */   \"updatePost\": () => (/* binding */ updatePost)\n/* harmony export */ });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"axios\");\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_0__]);\naxios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];\n\nfunction backHome() {\n    history.back();\n}\nfunction getAllPosts() {\n    return axios__WEBPACK_IMPORTED_MODULE_0__[\"default\"].get(\"https://jsonplaceholder.typicode.com/posts\").then((res)=>res.data);\n}\nfunction getPost(postId) {\n    console.log(\"postId: \", postId.queryKey[0]);\n    const id = postId.queryKey[0];\n    return axios__WEBPACK_IMPORTED_MODULE_0__[\"default\"].get(`https://jsonplaceholder.typicode.com/posts/${id}`).then((res)=>res.data);\n}\nfunction createPost(postData) {\n    return axios__WEBPACK_IMPORTED_MODULE_0__[\"default\"].post(\"https://jsonplaceholder.typicode.com/posts\", postData).then((res)=>{\n        console.log(res.data);\n        backHome();\n    });\n}\nfunction updatePost({ id , ...postData }) {\n    return axios__WEBPACK_IMPORTED_MODULE_0__[\"default\"].patch(`https://jsonplaceholder.typicode.com/posts/${id}`, postData).then((res)=>{\n        console.log(res.data);\n        backHome();\n    });\n}\nfunction deletePost(postId) {\n    return axios__WEBPACK_IMPORTED_MODULE_0__[\"default\"][\"delete\"](`https://jsonplaceholder.typicode.com/posts/${postId}`).then((res)=>console.log(res.data));\n}\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9hcGkvcG9zdHMuanMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7O0FBQXlCO0FBRXpCLFNBQVNDLFdBQVc7SUFBQ0MsUUFBUUMsSUFBSTtBQUFFO0FBRTVCLFNBQVNDLGNBQWM7SUFDNUIsT0FBT0osaURBQVMsQ0FBQyw4Q0FBOENNLElBQUksQ0FBQ0MsQ0FBQUEsTUFBT0EsSUFBSUMsSUFBSTtBQUNyRixDQUFDO0FBRU0sU0FBU0MsUUFBUUMsTUFBTSxFQUFFO0lBQzlCQyxRQUFRQyxHQUFHLENBQUMsWUFBWUYsT0FBT0csUUFBUSxDQUFDLEVBQUU7SUFDMUMsTUFBTUMsS0FBS0osT0FBT0csUUFBUSxDQUFDLEVBQUU7SUFDN0IsT0FBT2IsaURBQ0QsQ0FBQyxDQUFDLDJDQUEyQyxFQUFFYyxHQUFHLENBQUMsRUFDdERSLElBQUksQ0FBQ0MsQ0FBQUEsTUFBT0EsSUFBSUMsSUFBSTtBQUN6QixDQUFDO0FBRU0sU0FBU08sV0FBV0MsUUFBUSxFQUFFO0lBQ25DLE9BQU9oQixrREFBVSxDQUFDLDhDQUE4Q2dCLFVBQVVWLElBQUksQ0FBQ0MsQ0FBQUEsTUFBTztRQUNwRkksUUFBUUMsR0FBRyxDQUFDTCxJQUFJQyxJQUFJO1FBQ3BCUDtJQUNGO0FBQ0YsQ0FBQztBQUVNLFNBQVNpQixXQUFXLEVBQUVKLEdBQUUsRUFBRSxHQUFHRSxVQUFVLEVBQUU7SUFDOUMsT0FBT2hCLG1EQUFXLENBQUMsQ0FBQywyQ0FBMkMsRUFBRWMsR0FBRyxDQUFDLEVBQUVFLFVBQVVWLElBQUksQ0FBQ0MsQ0FBQUEsTUFBTztRQUMzRkksUUFBUUMsR0FBRyxDQUFDTCxJQUFJQyxJQUFJO1FBQ3BCUDtJQUNGO0FBQ0YsQ0FBQztBQUVNLFNBQVNtQixXQUFXVixNQUFNLEVBQUU7SUFDakMsT0FBT1YsdURBQVksQ0FBQyxDQUFDLDJDQUEyQyxFQUFFVSxPQUFPLENBQUMsRUFBRUosSUFBSSxDQUFDQyxDQUFBQSxNQUFPSSxRQUFRQyxHQUFHLENBQUNMLElBQUlDLElBQUk7QUFDOUcsQ0FBQyIsInNvdXJjZXMiOlsid2VicGFjazovL25leHRqcy1jaGFsbGFuZ2UvLi9wYWdlcy9hcGkvcG9zdHMuanM/NjlmZCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgYXhpb3MgZnJvbSAnYXhpb3MnXG5cbmZ1bmN0aW9uIGJhY2tIb21lKCkge2hpc3RvcnkuYmFjaygpfVxuXG5leHBvcnQgZnVuY3Rpb24gZ2V0QWxsUG9zdHMoKSB7XG4gIHJldHVybiBheGlvcy5nZXQoJ2h0dHBzOi8vanNvbnBsYWNlaG9sZGVyLnR5cGljb2RlLmNvbS9wb3N0cycpLnRoZW4ocmVzID0+IHJlcy5kYXRhKVxufVxuXG5leHBvcnQgZnVuY3Rpb24gZ2V0UG9zdChwb3N0SWQpIHtcbiAgY29uc29sZS5sb2coXCJwb3N0SWQ6IFwiLCBwb3N0SWQucXVlcnlLZXlbMF0pO1xuICBjb25zdCBpZCA9IHBvc3RJZC5xdWVyeUtleVswXTtcbiAgcmV0dXJuIGF4aW9zXG4gICAgLmdldChgaHR0cHM6Ly9qc29ucGxhY2Vob2xkZXIudHlwaWNvZGUuY29tL3Bvc3RzLyR7aWR9YClcbiAgICAudGhlbihyZXMgPT4gcmVzLmRhdGEpXG59XG5cbmV4cG9ydCBmdW5jdGlvbiBjcmVhdGVQb3N0KHBvc3REYXRhKSB7XG4gIHJldHVybiBheGlvcy5wb3N0KCdodHRwczovL2pzb25wbGFjZWhvbGRlci50eXBpY29kZS5jb20vcG9zdHMnLCBwb3N0RGF0YSkudGhlbihyZXMgPT4ge1xuICAgIGNvbnNvbGUubG9nKHJlcy5kYXRhKVxuICAgIGJhY2tIb21lKClcbiAgfSlcbn1cblxuZXhwb3J0IGZ1bmN0aW9uIHVwZGF0ZVBvc3QoeyBpZCwgLi4ucG9zdERhdGEgfSkge1xuICByZXR1cm4gYXhpb3MucGF0Y2goYGh0dHBzOi8vanNvbnBsYWNlaG9sZGVyLnR5cGljb2RlLmNvbS9wb3N0cy8ke2lkfWAsIHBvc3REYXRhKS50aGVuKHJlcyA9PiB7XG4gICAgY29uc29sZS5sb2cocmVzLmRhdGEpXG4gICAgYmFja0hvbWUoKVxuICB9KVxufVxuXG5leHBvcnQgZnVuY3Rpb24gZGVsZXRlUG9zdChwb3N0SWQpIHtcbiAgcmV0dXJuIGF4aW9zLmRlbGV0ZShgaHR0cHM6Ly9qc29ucGxhY2Vob2xkZXIudHlwaWNvZGUuY29tL3Bvc3RzLyR7cG9zdElkfWApLnRoZW4ocmVzID0+IGNvbnNvbGUubG9nKHJlcy5kYXRhKSlcbn0iXSwibmFtZXMiOlsiYXhpb3MiLCJiYWNrSG9tZSIsImhpc3RvcnkiLCJiYWNrIiwiZ2V0QWxsUG9zdHMiLCJnZXQiLCJ0aGVuIiwicmVzIiwiZGF0YSIsImdldFBvc3QiLCJwb3N0SWQiLCJjb25zb2xlIiwibG9nIiwicXVlcnlLZXkiLCJpZCIsImNyZWF0ZVBvc3QiLCJwb3N0RGF0YSIsInBvc3QiLCJ1cGRhdGVQb3N0IiwicGF0Y2giLCJkZWxldGVQb3N0IiwiZGVsZXRlIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./pages/api/posts.js\n");
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EditPost),
+/* harmony export */   "getServerSideProps": () => (/* binding */ getServerSideProps)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2210);
+/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5641);
+/* harmony import */ var react_query__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1175);
+/* harmony import */ var react_query__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_query__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _api_posts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7688);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__, react_hook_form__WEBPACK_IMPORTED_MODULE_2__, _api_posts__WEBPACK_IMPORTED_MODULE_4__]);
+([_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__, react_hook_form__WEBPACK_IMPORTED_MODULE_2__, _api_posts__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
+
+
+
+function EditPost({ postId  }) {
+    console.log("postId: ", postId);
+    const queryClient = (0,react_query__WEBPACK_IMPORTED_MODULE_3__.useQueryClient)();
+    const { register , handleSubmit , setValue  } = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_2__.useForm)();
+    const { data: post , isLoading: isPostLoading  } = (0,react_query__WEBPACK_IMPORTED_MODULE_3__.useQuery)([
+        postId
+    ], _api_posts__WEBPACK_IMPORTED_MODULE_4__/* .getPost */ .xl);
+    const { mutate: updateExistingPost , isLoading: isUpdateLoading  } = (0,react_query__WEBPACK_IMPORTED_MODULE_3__.useMutation)(_api_posts__WEBPACK_IMPORTED_MODULE_4__/* .updatePost */ .CP, {
+        onSuccess: ()=>{
+            queryClient.invalidateQueries([
+                "post",
+                postId
+            ]);
+            queryClient.invalidateQueries("posts");
+        }
+    });
+    const onSubmit = (data)=>{
+        updateExistingPost({
+            id: postId,
+            ...data
+        });
+    };
+    if (isPostLoading) {
+        return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+            children: "Loading..."
+        });
+    }
+    // Pre-populate form with existing post data
+    setValue("title", post.title);
+    setValue("body", post.body);
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Box, {
+        m: "40px",
+        children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Heading, {
+                mb: "4",
+                children: "Edit Post"
+            }),
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("form", {
+                onSubmit: handleSubmit(onSubmit),
+                children: [
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.FormControl, {
+                        mb: "4",
+                        children: [
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.FormLabel, {
+                                children: "Title"
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Input, {
+                                ...register("title", {
+                                    required: true
+                                })
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.FormControl, {
+                        mb: "4",
+                        children: [
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.FormLabel, {
+                                children: "Body"
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Textarea, {
+                                ...register("body", {
+                                    required: true
+                                })
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Button, {
+                        type: "submit",
+                        isLoading: isUpdateLoading,
+                        mr: "4",
+                        children: "Save Changes"
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Button, {
+                        onClick: ()=>history.back(),
+                        mr: "4",
+                        children: "Cancel"
+                    })
+                ]
+            })
+        ]
+    });
+}
+async function getServerSideProps({ query  }) {
+    return {
+        props: {
+            postId: query.id
+        }
+    };
+}
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
-/***/ "./pages/edit-post.js":
-/*!****************************!*\
-  !*** ./pages/edit-post.js ***!
-  \****************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ EditPost),\n/* harmony export */   \"getServerSideProps\": () => (/* binding */ getServerSideProps)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/react */ \"@chakra-ui/react\");\n/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-hook-form */ \"react-hook-form\");\n/* harmony import */ var react_query__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-query */ \"react-query\");\n/* harmony import */ var react_query__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_query__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _api_posts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./api/posts */ \"./pages/api/posts.js\");\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__, react_hook_form__WEBPACK_IMPORTED_MODULE_2__, _api_posts__WEBPACK_IMPORTED_MODULE_4__]);\n([_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__, react_hook_form__WEBPACK_IMPORTED_MODULE_2__, _api_posts__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);\n\n\n\n\n\nfunction EditPost({ postId  }) {\n    console.log(\"postId: \", postId);\n    const queryClient = (0,react_query__WEBPACK_IMPORTED_MODULE_3__.useQueryClient)();\n    const { register , handleSubmit , setValue  } = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_2__.useForm)();\n    const { data: post , isLoading: isPostLoading  } = (0,react_query__WEBPACK_IMPORTED_MODULE_3__.useQuery)([\n        postId\n    ], _api_posts__WEBPACK_IMPORTED_MODULE_4__.getPost);\n    const { mutate: updateExistingPost , isLoading: isUpdateLoading  } = (0,react_query__WEBPACK_IMPORTED_MODULE_3__.useMutation)(_api_posts__WEBPACK_IMPORTED_MODULE_4__.updatePost, {\n        onSuccess: ()=>{\n            queryClient.invalidateQueries([\n                \"post\",\n                postId\n            ]);\n            queryClient.invalidateQueries(\"posts\");\n        }\n    });\n    const onSubmit = (data)=>{\n        updateExistingPost({\n            id: postId,\n            ...data\n        });\n    };\n    if (isPostLoading) {\n        return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n            children: \"Loading...\"\n        }, void 0, false, {\n            fileName: \"/Users/ilhamakbarahmadi/Documents/Training/nextjs-challange/pages/edit-post.js\",\n            lineNumber: 24,\n            columnNumber: 12\n        }, this);\n    }\n    // Pre-populate form with existing post data\n    setValue(\"title\", post.title);\n    setValue(\"body\", post.body);\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Box, {\n        m: \"40px\",\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Heading, {\n                mb: \"4\",\n                children: \"Edit Post\"\n            }, void 0, false, {\n                fileName: \"/Users/ilhamakbarahmadi/Documents/Training/nextjs-challange/pages/edit-post.js\",\n                lineNumber: 33,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"form\", {\n                onSubmit: handleSubmit(onSubmit),\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.FormControl, {\n                        mb: \"4\",\n                        children: [\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.FormLabel, {\n                                children: \"Title\"\n                            }, void 0, false, {\n                                fileName: \"/Users/ilhamakbarahmadi/Documents/Training/nextjs-challange/pages/edit-post.js\",\n                                lineNumber: 36,\n                                columnNumber: 11\n                            }, this),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Input, {\n                                ...register(\"title\", {\n                                    required: true\n                                })\n                            }, void 0, false, {\n                                fileName: \"/Users/ilhamakbarahmadi/Documents/Training/nextjs-challange/pages/edit-post.js\",\n                                lineNumber: 37,\n                                columnNumber: 11\n                            }, this)\n                        ]\n                    }, void 0, true, {\n                        fileName: \"/Users/ilhamakbarahmadi/Documents/Training/nextjs-challange/pages/edit-post.js\",\n                        lineNumber: 35,\n                        columnNumber: 9\n                    }, this),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.FormControl, {\n                        mb: \"4\",\n                        children: [\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.FormLabel, {\n                                children: \"Body\"\n                            }, void 0, false, {\n                                fileName: \"/Users/ilhamakbarahmadi/Documents/Training/nextjs-challange/pages/edit-post.js\",\n                                lineNumber: 40,\n                                columnNumber: 11\n                            }, this),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Textarea, {\n                                ...register(\"body\", {\n                                    required: true\n                                })\n                            }, void 0, false, {\n                                fileName: \"/Users/ilhamakbarahmadi/Documents/Training/nextjs-challange/pages/edit-post.js\",\n                                lineNumber: 41,\n                                columnNumber: 11\n                            }, this)\n                        ]\n                    }, void 0, true, {\n                        fileName: \"/Users/ilhamakbarahmadi/Documents/Training/nextjs-challange/pages/edit-post.js\",\n                        lineNumber: 39,\n                        columnNumber: 9\n                    }, this),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Button, {\n                        type: \"submit\",\n                        isLoading: isUpdateLoading,\n                        mr: \"4\",\n                        children: \"Save Changes\"\n                    }, void 0, false, {\n                        fileName: \"/Users/ilhamakbarahmadi/Documents/Training/nextjs-challange/pages/edit-post.js\",\n                        lineNumber: 43,\n                        columnNumber: 9\n                    }, this),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_1__.Button, {\n                        onClick: ()=>history.back(),\n                        mr: \"4\",\n                        children: \"Cancel\"\n                    }, void 0, false, {\n                        fileName: \"/Users/ilhamakbarahmadi/Documents/Training/nextjs-challange/pages/edit-post.js\",\n                        lineNumber: 46,\n                        columnNumber: 9\n                    }, this)\n                ]\n            }, void 0, true, {\n                fileName: \"/Users/ilhamakbarahmadi/Documents/Training/nextjs-challange/pages/edit-post.js\",\n                lineNumber: 34,\n                columnNumber: 7\n            }, this)\n        ]\n    }, void 0, true, {\n        fileName: \"/Users/ilhamakbarahmadi/Documents/Training/nextjs-challange/pages/edit-post.js\",\n        lineNumber: 32,\n        columnNumber: 5\n    }, this);\n}\nasync function getServerSideProps({ query  }) {\n    return {\n        props: {\n            postId: query.id\n        }\n    };\n}\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9lZGl0LXBvc3QuanMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7OztBQUFnRztBQUN2RDtBQUMwQjtBQUNsQjtBQUVsQyxTQUFTYSxTQUFTLEVBQUVDLE9BQU0sRUFBRSxFQUFFO0lBQzNDQyxRQUFRQyxHQUFHLENBQUMsWUFBWUY7SUFDeEIsTUFBTUcsY0FBY1AsMkRBQWNBO0lBQ2xDLE1BQU0sRUFBRVEsU0FBUSxFQUFFQyxhQUFZLEVBQUVDLFNBQVEsRUFBRSxHQUFHYix3REFBT0E7SUFDcEQsTUFBTSxFQUFFYyxNQUFNQyxLQUFJLEVBQUVDLFdBQVdDLGNBQWEsRUFBRSxHQUFHZixxREFBUUEsQ0FBQztRQUFDSztLQUFPLEVBQUVILCtDQUFPQTtJQUUzRSxNQUFNLEVBQUVjLFFBQVFDLG1CQUFrQixFQUFFSCxXQUFXSSxnQkFBZSxFQUFFLEdBQUduQix3REFBV0EsQ0FBQ0ksa0RBQVVBLEVBQUU7UUFDekZnQixXQUFXLElBQU07WUFDZlgsWUFBWVksaUJBQWlCLENBQUM7Z0JBQUM7Z0JBQVFmO2FBQU87WUFDOUNHLFlBQVlZLGlCQUFpQixDQUFDO1FBQ2hDO0lBQ0Y7SUFFQSxNQUFNQyxXQUFXVCxDQUFBQSxPQUFRO1FBQ3ZCSyxtQkFBbUI7WUFBRUssSUFBSWpCO1lBQVEsR0FBR08sSUFBSTtRQUFDO0lBQzNDO0lBRUEsSUFBSUcsZUFBZTtRQUNqQixxQkFBTyw4REFBQ1E7c0JBQUk7Ozs7OztJQUNkLENBQUM7SUFFRCw0Q0FBNEM7SUFDNUNaLFNBQVMsU0FBU0UsS0FBS1csS0FBSztJQUM1QmIsU0FBUyxRQUFRRSxLQUFLWSxJQUFJO0lBRTFCLHFCQUNFLDhEQUFDakMsaURBQUdBO1FBQUNrQyxHQUFFOzswQkFDTCw4REFBQ25DLHFEQUFPQTtnQkFBQ29DLElBQUc7MEJBQUk7Ozs7OzswQkFDaEIsOERBQUNDO2dCQUFLUCxVQUFVWCxhQUFhVzs7a0NBQzNCLDhEQUFDNUIseURBQVdBO3dCQUFDa0MsSUFBRzs7MENBQ2QsOERBQUNqQyx1REFBU0E7MENBQUM7Ozs7OzswQ0FDWCw4REFBQ0MsbURBQUtBO2dDQUFFLEdBQUdjLFNBQVMsU0FBUztvQ0FBRW9CLFVBQVUsSUFBSTtnQ0FBQyxFQUFFOzs7Ozs7Ozs7Ozs7a0NBRWxELDhEQUFDcEMseURBQVdBO3dCQUFDa0MsSUFBRzs7MENBQ2QsOERBQUNqQyx1REFBU0E7MENBQUM7Ozs7OzswQ0FDWCw4REFBQ0Usc0RBQVFBO2dDQUFFLEdBQUdhLFNBQVMsUUFBUTtvQ0FBRW9CLFVBQVUsSUFBSTtnQ0FBQyxFQUFFOzs7Ozs7Ozs7Ozs7a0NBRXBELDhEQUFDaEMsb0RBQU1BO3dCQUFDaUMsTUFBSzt3QkFBU2hCLFdBQVdJO3dCQUFpQmEsSUFBRztrQ0FBSTs7Ozs7O2tDQUd6RCw4REFBQ2xDLG9EQUFNQTt3QkFBQ21DLFNBQVMsSUFBTUMsUUFBUUMsSUFBSTt3QkFBSUgsSUFBRztrQ0FBSTs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBTXRELENBQUM7QUFFTSxlQUFlSSxtQkFBbUIsRUFBRUMsTUFBSyxFQUFFLEVBQUU7SUFDbEQsT0FBTztRQUNMQyxPQUFPO1lBQ0xoQyxRQUFRK0IsTUFBTWQsRUFBRTtRQUNsQjtJQUNGO0FBQ0YsQ0FBQyIsInNvdXJjZXMiOlsid2VicGFjazovL25leHRqcy1jaGFsbGFuZ2UvLi9wYWdlcy9lZGl0LXBvc3QuanM/ODgxZCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBIZWFkaW5nLCBCb3gsIEZvcm1Db250cm9sLCBGb3JtTGFiZWwsIElucHV0LCBUZXh0YXJlYSwgQnV0dG9uIH0gZnJvbSAnQGNoYWtyYS11aS9yZWFjdCdcbmltcG9ydCB7IHVzZUZvcm0gfSBmcm9tICdyZWFjdC1ob29rLWZvcm0nXG5pbXBvcnQgeyB1c2VNdXRhdGlvbiwgdXNlUXVlcnksIHVzZVF1ZXJ5Q2xpZW50IH0gZnJvbSAncmVhY3QtcXVlcnknXG5pbXBvcnQgeyBnZXRQb3N0LCB1cGRhdGVQb3N0IH0gZnJvbSAnLi9hcGkvcG9zdHMnXG5cbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEVkaXRQb3N0KHsgcG9zdElkIH0pIHtcbiAgY29uc29sZS5sb2coXCJwb3N0SWQ6IFwiLCBwb3N0SWQpO1xuICBjb25zdCBxdWVyeUNsaWVudCA9IHVzZVF1ZXJ5Q2xpZW50KClcbiAgY29uc3QgeyByZWdpc3RlciwgaGFuZGxlU3VibWl0LCBzZXRWYWx1ZSB9ID0gdXNlRm9ybSgpXG4gIGNvbnN0IHsgZGF0YTogcG9zdCwgaXNMb2FkaW5nOiBpc1Bvc3RMb2FkaW5nIH0gPSB1c2VRdWVyeShbcG9zdElkXSwgZ2V0UG9zdClcblxuICBjb25zdCB7IG11dGF0ZTogdXBkYXRlRXhpc3RpbmdQb3N0LCBpc0xvYWRpbmc6IGlzVXBkYXRlTG9hZGluZyB9ID0gdXNlTXV0YXRpb24odXBkYXRlUG9zdCwge1xuICAgIG9uU3VjY2VzczogKCkgPT4ge1xuICAgICAgcXVlcnlDbGllbnQuaW52YWxpZGF0ZVF1ZXJpZXMoWydwb3N0JywgcG9zdElkXSlcbiAgICAgIHF1ZXJ5Q2xpZW50LmludmFsaWRhdGVRdWVyaWVzKCdwb3N0cycpXG4gICAgfSxcbiAgfSlcblxuICBjb25zdCBvblN1Ym1pdCA9IGRhdGEgPT4ge1xuICAgIHVwZGF0ZUV4aXN0aW5nUG9zdCh7IGlkOiBwb3N0SWQsIC4uLmRhdGEgfSlcbiAgfVxuXG4gIGlmIChpc1Bvc3RMb2FkaW5nKSB7XG4gICAgcmV0dXJuIDxkaXY+TG9hZGluZy4uLjwvZGl2PlxuICB9XG5cbiAgLy8gUHJlLXBvcHVsYXRlIGZvcm0gd2l0aCBleGlzdGluZyBwb3N0IGRhdGFcbiAgc2V0VmFsdWUoJ3RpdGxlJywgcG9zdC50aXRsZSlcbiAgc2V0VmFsdWUoJ2JvZHknLCBwb3N0LmJvZHkpXG5cbiAgcmV0dXJuIChcbiAgICA8Qm94IG09XCI0MHB4XCI+XG4gICAgICA8SGVhZGluZyBtYj1cIjRcIj5FZGl0IFBvc3Q8L0hlYWRpbmc+XG4gICAgICA8Zm9ybSBvblN1Ym1pdD17aGFuZGxlU3VibWl0KG9uU3VibWl0KX0+XG4gICAgICAgIDxGb3JtQ29udHJvbCBtYj1cIjRcIj5cbiAgICAgICAgICA8Rm9ybUxhYmVsPlRpdGxlPC9Gb3JtTGFiZWw+XG4gICAgICAgICAgPElucHV0IHsuLi5yZWdpc3RlcigndGl0bGUnLCB7IHJlcXVpcmVkOiB0cnVlIH0pfSAvPlxuICAgICAgICA8L0Zvcm1Db250cm9sPlxuICAgICAgICA8Rm9ybUNvbnRyb2wgbWI9XCI0XCI+XG4gICAgICAgICAgPEZvcm1MYWJlbD5Cb2R5PC9Gb3JtTGFiZWw+XG4gICAgICAgICAgPFRleHRhcmVhIHsuLi5yZWdpc3RlcignYm9keScsIHsgcmVxdWlyZWQ6IHRydWUgfSl9IC8+XG4gICAgICAgIDwvRm9ybUNvbnRyb2w+XG4gICAgICAgIDxCdXR0b24gdHlwZT1cInN1Ym1pdFwiIGlzTG9hZGluZz17aXNVcGRhdGVMb2FkaW5nfSBtcj1cIjRcIj5cbiAgICAgICAgICBTYXZlIENoYW5nZXNcbiAgICAgICAgPC9CdXR0b24+XG4gICAgICAgIDxCdXR0b24gb25DbGljaz17KCkgPT4gaGlzdG9yeS5iYWNrKCl9IG1yPVwiNFwiPlxuICAgICAgICAgIENhbmNlbFxuICAgICAgICA8L0J1dHRvbj5cbiAgICAgIDwvZm9ybT5cbiAgICA8L0JveD5cbiAgKVxufVxuXG5leHBvcnQgYXN5bmMgZnVuY3Rpb24gZ2V0U2VydmVyU2lkZVByb3BzKHsgcXVlcnkgfSkge1xuICByZXR1cm4ge1xuICAgIHByb3BzOiB7XG4gICAgICBwb3N0SWQ6IHF1ZXJ5LmlkLFxuICAgIH0sXG4gIH1cbn1cbiJdLCJuYW1lcyI6WyJIZWFkaW5nIiwiQm94IiwiRm9ybUNvbnRyb2wiLCJGb3JtTGFiZWwiLCJJbnB1dCIsIlRleHRhcmVhIiwiQnV0dG9uIiwidXNlRm9ybSIsInVzZU11dGF0aW9uIiwidXNlUXVlcnkiLCJ1c2VRdWVyeUNsaWVudCIsImdldFBvc3QiLCJ1cGRhdGVQb3N0IiwiRWRpdFBvc3QiLCJwb3N0SWQiLCJjb25zb2xlIiwibG9nIiwicXVlcnlDbGllbnQiLCJyZWdpc3RlciIsImhhbmRsZVN1Ym1pdCIsInNldFZhbHVlIiwiZGF0YSIsInBvc3QiLCJpc0xvYWRpbmciLCJpc1Bvc3RMb2FkaW5nIiwibXV0YXRlIiwidXBkYXRlRXhpc3RpbmdQb3N0IiwiaXNVcGRhdGVMb2FkaW5nIiwib25TdWNjZXNzIiwiaW52YWxpZGF0ZVF1ZXJpZXMiLCJvblN1Ym1pdCIsImlkIiwiZGl2IiwidGl0bGUiLCJib2R5IiwibSIsIm1iIiwiZm9ybSIsInJlcXVpcmVkIiwidHlwZSIsIm1yIiwib25DbGljayIsImhpc3RvcnkiLCJiYWNrIiwiZ2V0U2VydmVyU2lkZVByb3BzIiwicXVlcnkiLCJwcm9wcyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./pages/edit-post.js\n");
-
-/***/ }),
-
-/***/ "react-query":
-/*!******************************!*\
-  !*** external "react-query" ***!
-  \******************************/
+/***/ 1175:
 /***/ ((module) => {
 
 module.exports = require("react-query");
 
 /***/ }),
 
-/***/ "react/jsx-dev-runtime":
-/*!****************************************!*\
-  !*** external "react/jsx-dev-runtime" ***!
-  \****************************************/
+/***/ 997:
 /***/ ((module) => {
 
-module.exports = require("react/jsx-dev-runtime");
+module.exports = require("react/jsx-runtime");
 
 /***/ }),
 
-/***/ "@chakra-ui/react":
-/*!***********************************!*\
-  !*** external "@chakra-ui/react" ***!
-  \***********************************/
+/***/ 2210:
 /***/ ((module) => {
 
 module.exports = import("@chakra-ui/react");;
 
 /***/ }),
 
-/***/ "axios":
-/*!************************!*\
-  !*** external "axios" ***!
-  \************************/
+/***/ 9648:
 /***/ ((module) => {
 
 module.exports = import("axios");;
 
 /***/ }),
 
-/***/ "react-hook-form":
-/*!**********************************!*\
-  !*** external "react-hook-form" ***!
-  \**********************************/
+/***/ 5641:
 /***/ ((module) => {
 
 module.exports = import("react-hook-form");;
@@ -90,7 +165,7 @@ module.exports = import("react-hook-form");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__("./pages/edit-post.js"));
+var __webpack_exports__ = __webpack_require__.X(0, [688], () => (__webpack_exec__(3258)));
 module.exports = __webpack_exports__;
 
 })();

@@ -1,6 +1,11 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/api/posts": "pages/api/posts.js",
+  "/create-post": "pages/create-post.html",
+  "/": "pages/index.html",
+  "/_error": "pages/_error.js",
+  "/edit-post": "pages/edit-post.js",
+  "/post": "pages/post.js",
+  "/404": "pages/404.html"
 }
